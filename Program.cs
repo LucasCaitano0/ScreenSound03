@@ -39,6 +39,14 @@ void ExibirOpcoesDoMenu()
     string opcaoEscolhida = Console.ReadLine()!;
     int opcaoEscolhidaNumerica = int.Parse(opcaoEscolhida);
 
+    Dictionary<int, Menu> opcoes = new();
+    opcoes.Add(1, new MenuRegistrarBanda());
+    opcoes.Add(2, new MenuRegistrarAlbum());
+    opcoes.Add(3, new MenuMostrarBandasRegistradas());
+    opcoes.Add(4, new MenuAvaliarBanda());
+    opcoes.Add(5, new MenuExibirDetalhes());
+    opcoes.Add(-1, new MenuSair());
+
     switch (opcaoEscolhidaNumerica)
     {
         case 1:
@@ -67,7 +75,8 @@ void ExibirOpcoesDoMenu()
             ExibirOpcoesDoMenu();
             break;
         case -1:
-            Console.WriteLine("Tchau tchau :)");
+            MenuSair menu6 = new();
+            menu6.Executar(bandasRegistradas);
             break;
         default:
             Console.WriteLine("Opção inválida");
