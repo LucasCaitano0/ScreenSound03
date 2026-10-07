@@ -2,7 +2,7 @@
 
 internal class MenuSair : Menu
 {
-    public void Executar(Dictionary<string, Modelos.Banda> bandasRegistradas)
+    public override void Executar(Dictionary<string, Modelos.Banda> bandasRegistradas)
     {
         Console.WriteLine("Tchau tchau! ");
     }
